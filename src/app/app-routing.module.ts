@@ -15,9 +15,6 @@ const routes: Routes = [
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
-    path: 'forms-app',
-    loadChildren: () => import('./forms-app/forms-app.module').then( m => m.FormsAppPageModule)
-  },  {
     path: 'produtos',
     loadChildren: () => import('./produtos/produtos.module').then( m => m.ProdutosPageModule)
   }

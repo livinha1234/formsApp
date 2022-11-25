@@ -1,35 +1,67 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="tertiary">
-    <ion-title>
-     Página Registro
-    </ion-title>
+    <ion-title> Página Registro </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-  <body>
-
-    <div>
+  <form [formGroup]="formRegistro">
+    <body>
+      <div>
         <h1 routerLink="/registro">Registro</h1>
-        <input type="text" placeholder="Nome">
-        <br><br>
-        <input type="text" placeholder="CPF">
-        <br><br>
-          <input type="text" placeholder="Email">
-        <br><br>
+        <ion-item>
+          <ion-label type="text" placeholder="Nome" position="floating"
+            >Nome</ion-label
+          >
+          <ion-input formControlName="nome"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label input type="text" placeholder="CPF" position="floating"
+            >CPF</ion-label
+          >
+          <ion-input formControlName="cpf"></ion-input>
+        </ion-item>
 
-     <input type="password" placeholder="Senha">
-    <br><br>
-    <input type="password" placeholder="Confimar Senha ">
-    <br><br>
+        <ion-item>
+          <ion-label input type="text" placeholder="Email" position="floating"
+            >Email</ion-label
+          >
+          <ion-input formControlName="email"></ion-input>
+        </ion-item>
 
-          <ion-button color="tertiary" routerLink="/tabs/tab1"> Salvar/Voltar</ion-button>
+        <ion-item>
+          <ion-label
+            input
+            type="password"
+            placeholder="Senha"
+            position="floating"
+            >Senha</ion-label
+          >
+          <ion-input type="password" formControlName="senha"></ion-input>
+        </ion-item>
 
+        <ion-item>
+          <ion-label
+            input
+            type="password"
+            placeholder="Confimar Senha "
+            position="floating"
+            >Confirmar</ion-label
+          >
+          <ion-input
+            type="password"
+            formControlName=" confirmasenha"
+          ></ion-input>
+        </ion-item>
 
+        <ion-button color="tertiary" (click)="salvarRegistro()">
+          Salvar
+        </ion-button>
 
-    </div>
-</body>
-
-
+        <ion-button color="tertiary" routerLink="/tabs/tab1">
+          Voltar
+        </ion-button>
+      </div>
+    </body>
+  </form>
 </ion-content>
