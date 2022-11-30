@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Usuario } from 'app/models/Usuário';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,10 +9,22 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  fileIcon = '../../assets/file.svg';
+  listaUsuarios: Usuario[] = [];
 
+  constructor(private storageService: StorageService) { }
 
-  constructor() {}
+  async buscarUsuarios() {
+    this.listaUsuarios = await this.storageService.getAll();
+  }
+
+  ionViewWillEnter() {
+    this.buscarUsuarios();
+  }
+
+  async excluirRegistro(email: string){
+    await this.storageService.remove(email);
+    this.buscarUsuarios();
+  }
 
 
 }

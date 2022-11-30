@@ -25,7 +25,7 @@ export class StorageService {
       this._storage?.set(key, value);
     }
 
-    public remove(key: string, value: any) {
+    public remove(key: string) {
       this._storage?.remove(key);
     }
 
