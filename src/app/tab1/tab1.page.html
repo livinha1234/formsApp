@@ -2,7 +2,6 @@
   <ion-toolbar color="secondary">
     <ion-buttons slot="start">
       <ion-button>
-        <ion-icon slot="icon-only" [src]="fileIcon"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>FormsApp</ion-title>
@@ -10,26 +9,21 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-button color="dark" routerLink="/login">
-          Fazer Login
-        </ion-button>
+        <ion-button color= "dark" routerLink="/login" expand="block">Fazer Login</ion-button>
+</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button color="dark" routerLink="/registro" expand="block">Fazer Registro</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button color="dark" routerLink="/registro">
-          Fazer Registro
-        </ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button color="dark" routerLink="/produto">
-          Cadastrar Produto
-        </ion-button>
+        <ion-button color="dark" routerLink="/produtos" expand="block">Cadastrar Produtos</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -54,4 +48,4 @@
     </ion-item-options>
   </ion-item-sliding>
 </ion-content>
-</ion-content>
+

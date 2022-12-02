@@ -16,42 +16,41 @@ export class RegistroPage implements OnInit {
 
   mensagens = {
     nome: [
-      { tipo: 'required', mensagem: 'O campo Nome é obrigatório.' },
+      { tipo: 'required', mensagens: 'O campo Nome é obrigatório.' },
       {
         tipo: 'minlength',
-        mensagem: 'O nome deve ter pelo menos 3 caracteres.',
+        mensagens: 'O nome deve ter pelo menos 3 caracteres.',
       },
     ],
     cpf: [
-      { tipo: 'required', mensagem: 'O campo CPF é obrigatório.' },
-      { tipo: 'invalido', mensagem: 'CPF Inválido.' },
+      { tipo: 'required', mensagens: 'O campo CPF é obrigatório.' },
     ],
     email: [
-      { tipo: 'required', mensagem: 'O campo E-mail é obrigatório.' },
-      { tipo: 'email', mensagem: 'E-mail Inválido.' },
+      { tipo: 'required', mensagens: 'O campo E-mail é obrigatório.' },
+      { tipo: 'email', mensagens: 'E-mail Inválido.' },
     ],
     senha: [
-      { tipo: 'required', mensagem: 'É obrigatório confirmar senha.' },
+      { tipo: 'required', mensagens: 'É obrigatório confirmar senha.' },
       {
         tipo: 'minlength',
-        mensagem: 'A senha deve ter pelo menos 6 caracteres.',
+        mensagens: 'A senha deve ter pelo menos 6 caracteres.',
       },
       {
         tipo: 'maxlength',
-        mensagem: 'A senha deve ter no máximo 8 caractéres.',
+        mensagens: 'A senha deve ter no máximo 8 caractéres.',
       },
     ],
     confirmaSenha: [
-      { tipo: 'required', mensagem: 'É obrigatório confirmar senha.' },
+      { tipo: 'required', mensagens: 'É obrigatório confirmar senha.' },
       {
         tipo: 'minlength',
-        mensagem: 'A senha deve ter pelo menos 6 caracteres.',
+        mensagens: 'A senha deve ter pelo menos 6 caracteres.',
       },
       {
         tipo: 'maxlength',
-        mensagem: 'A senha deve ter no máximo 8 caractéres.',
+        mensagens: 'A senha deve ter no máximo 8 caractéres.',
       },
-      { tipo: 'comparacao', mensagem: 'Deve ser igual a Senha.' },
+      { tipo: 'comparacao', mensagens: 'Deve ser igual a Senha.' },
     ],
   };
 
@@ -68,7 +67,7 @@ export class RegistroPage implements OnInit {
         ],
         cpf: [
           '',
-          Validators.compose([Validators.required, CpfValidators.cpfValido]),
+          Validators.compose([Validators.required]),
         ],
         email: [
           '',
